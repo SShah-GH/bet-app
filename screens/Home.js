@@ -70,7 +70,10 @@ const Home = ({ navigation }) => {
             alignItems: "center",
             justifyContent: "center",
           }}
-          onPress={() => console.log("Ready to Log In")}
+          onPress={() => {
+          console.log("Ready to Log In");
+          navigation.navigate("LogIn");
+        }}
         >
           <Text
             style={{

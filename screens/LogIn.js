@@ -15,7 +15,8 @@ import {
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
 
-const LogIn = () => {
+const LogIn = ({ navigation }) => {
+  const [showPassword, setShowPassword] = React.useState(false);
   function renderHeader() {
     return (
       <View>
@@ -25,7 +26,7 @@ const LogIn = () => {
             ...FONTS.largeTitle,
           }}
         >
-          SIGN UP
+          LOG IN
         </Text>
         <View
           style={{
@@ -34,6 +35,67 @@ const LogIn = () => {
             marginVertical: 5,
           }}
         ></View>
+      </View>
+    );
+  }
+
+  function renderForm() {
+    return (
+      <View>
+        {/* Email */}
+        <View style={{ marginTop: SIZES.margin }}>
+          <Text style={styles.subHeading}>EMAIL</Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder="johndoe@gmail.com"
+            placeholderTextColor={COLORS.gray}
+            selectionColor={COLORS.gray}
+          />
+        </View>
+
+        {/* Password */}
+        <View style={{ marginTop: SIZES.margin }}>
+          <Text style={styles.subHeading}>PASSSWORD</Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder="Enter Password"
+            placeholderTextColor={COLORS.white}
+            selectionColor={COLORS.white}
+            secureTextEntry={!showPassword}
+          />
+          <TouchableOpacity
+            style={{
+              position: "absolute",
+              right: 0,
+              bottom: 10,
+              height: 50,
+              width: 50,
+            }}
+            onPress={() => setShowPassword(!showPassword)}
+          ></TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+
+  function renderButton() {
+    return (
+      <View style={{ marginTop: SIZES.margin * 2 }}>
+        <TouchableOpacity
+          style={{
+            height: 50,
+            backgroundColor: COLORS.secondary,
+            borderRadius: 5,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onPress={() => {
+            console.log("Logged In");
+            navigation.navigate("Home");
+          }}
+        >
+          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>LOG IN</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -48,6 +110,8 @@ const LogIn = () => {
       }}
     >
       {renderHeader()}
+      {renderForm()}
+      {renderButton()}
     </View>
   );
 };
@@ -65,7 +129,7 @@ const styles = StyleSheet.create({
     ...FONTS.body3,
   },
   subHeading: {
-    color: COLORS.gray,
+    color: COLORS.darkgray,
     ...FONTS.body3,
     fontWeight: "bold",
   },
