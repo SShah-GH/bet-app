@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "bet-app",
+    "slug": "bet-app",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "bet-app"
+}
