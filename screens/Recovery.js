@@ -124,7 +124,7 @@ const Recovery = ({ navigation }) => {
     footer: {
         color: COLORS.gray,
         ...FONTS.body3,
-        fontWeight: "semibold",
+        fontWeight: "bold",
       },
   });
 
