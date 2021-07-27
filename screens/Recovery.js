@@ -15,47 +15,46 @@ import {
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
 
-
 const Recovery = ({ navigation }) => {
-   // const [showPassword, setShowPassword] = React.useState(false);
-  
-    function renderHeader() {
-        return (
-            <View>
-                <Text
-                style={{
-                    color: COLORS.primary,
-                    ...FONTS.largeTitle,
-                }}
-                >
-                RECOVERY
-                </Text>
-                <View
-                /* Line */
-                style={{
-                    borderBottomColor: COLORS.gray,
-                    borderBottomWidth: 1,
-                    marginVertical: 5,
-                }}
-                />
-            </View>
-        );
-    }
+  // const [showPassword, stShowPassword] = React.useState(false);
+
+  function renderHeader() {
+    return (
+      <View>
+        <Text
+          style={{
+            color: COLORS.primary,
+            ...FONTS.largeTitle,
+          }}
+        >
+          RECOVERY
+        </Text>
+        <View
+          /* Line */
+          style={{
+            borderBottomColor: COLORS.gray,
+            borderBottomWidth: 1,
+            marginVertical: 5,
+          }}
+        />
+      </View>
+    );
+  }
 
   function renderForm() {
     return (
-        <View>
-            {/* Email */}
-            <View style={{ marginTop: SIZES.padding }}>
-            <Text style={styles.subHeading}>ACCOUNT EMAIL</Text>
-            <TextInput
-                style={styles.textInput}
-                placeholder="johndoe@gmail.com"
-                placeholderTextColor={COLORS.gray}
-                selectionColor={COLORS.gray}
-            />
-            </View>
+      <View>
+        {/* Email */}
+        <View style={{ marginTop: SIZES.padding }}>
+          <Text style={styles.subHeading}>ACCOUNT EMAIL</Text>
+          <TextInput
+            style={styles.textInput}
+            placeholder="johndoe@gmail.com"
+            placeholderTextColor={COLORS.gray}
+            selectionColor={COLORS.gray}
+          />
         </View>
+      </View>
     );
   }
 
@@ -75,7 +74,9 @@ const Recovery = ({ navigation }) => {
             navigation.navigate("Home");
           }}
         >
-          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>SEND EMAIL</Text>
+          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>
+            SEND EMAIL
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -83,14 +84,14 @@ const Recovery = ({ navigation }) => {
 
   function renderButton2() {
     return (
-      <View style={{ marginTop: SIZES.padding}}>
-        <Text style={styles.footer}>REMEMBER YOUR PASSWORD?</Text>
+      <View style={{ marginTop: SIZES.padding , flexDirection:"row"}}>
+        <Text style={{
+            color: COLORS.darkgray,
+            ...FONTS.body3,
+        }}> REMEMBER YOUR PASSWORD? </Text>
         <TouchableOpacity
           style={{
-            height: 0,
             backgroundColor: COLORS.white,
-            borderRadius: 0,
-            alignItems: "center",
             justifyContent: "center",
           }}
           onPress={() => {
@@ -98,7 +99,7 @@ const Recovery = ({ navigation }) => {
             navigation.navigate("LogIn");
           }}
         >
-          <Text style={{ color: COLORS.secondary, ...FONTS.body3 }}>LOGIN</Text>
+          <Text style={{ color: COLORS.secondary, ...FONTS.body3 }}>LOGIN→</Text>
         </TouchableOpacity>
       </View>
     );
@@ -122,25 +123,26 @@ const Recovery = ({ navigation }) => {
       fontWeight: "bold",
     },
     footer: {
-        color: COLORS.gray,
-        ...FONTS.body3,
-        fontWeight: "semibold",
-      },
+      color: COLORS.gray,
+      ...FONTS.body5,
+      fontWeight: "bold",
+    },
   });
 
   return (
     <View
-    style={{
-      flex: 1,
-      paddingHorizontal: 40,
-      backgroundColor: "#fff",
-      justifyContent: "center",
-    }}>
+      style={{
+        flex: 1,
+        paddingHorizontal: 40,
+        backgroundColor: "#fff",
+        justifyContent: "center",
+      }}
+    >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
       {renderButton2()}
-      </View>
+    </View>
   );
 };
 
