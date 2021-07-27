@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer,DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
-import { Home, SignUp, LogIn } from "./screens";
+import { Home, SignUp, LogIn, Recovery} from "./screens";
 
 
 
@@ -13,11 +13,11 @@ const App = () => {
 return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{headerShown: false, }}
-        initialRouteName={"LogIn"} >
+        initialRouteName={"Recovery"} >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LogIn" component={LogIn} />
-
+        <Stack.Screen name="Recovery" component={Recovery} />
       </Stack.Navigator>
     </NavigationContainer>
   );
