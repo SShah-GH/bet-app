@@ -3,6 +3,8 @@ import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import DashBoard from "./DashBoard";
 import Recovery from "./Recovery";
+import CashConfirm from "./CashConfirm";
+import DareConfirm from "./DareConfirm";
 
 
 export{
@@ -10,5 +12,7 @@ export{
     SignUp,
     LogIn,
     DashBoard,
-    Recovery
+    Recovery,
+    CashConfirm,
+    DareConfirm
 };
