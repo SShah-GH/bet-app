@@ -19,7 +19,7 @@ import cross from "../assets/images/cross.png";
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
 
-const BetDetailsLost = ({ navigation }) => {
+const BetDetailsWon = ({ navigation }) => {
   function renderHeader() {
     return (
       <View
@@ -221,4 +221,4 @@ const BetDetailsLost = ({ navigation }) => {
   );
 };
 
-export default BetDetailsLost;
+export default BetDetailsWon;
