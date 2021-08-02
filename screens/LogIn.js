@@ -13,7 +13,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const LogIn = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -22,11 +22,12 @@ const LogIn = ({ navigation }) => {
       <View>
         <Text
           style={{
+            fontFamily: "monsterratBold",
             color: COLORS.primary,
-            ...FONTS.largeTitle,
+            ...FONTSIZES.largeTitle,
           }}
         >
-          LOG IN
+          LOGIN
         </Text>
         <View
           style={{
@@ -84,17 +85,72 @@ const LogIn = ({ navigation }) => {
         <TouchableOpacity
           style={{
             height: 50,
-            backgroundColor: COLORS.secondary,
+            backgroundColor: COLORS.primary,
             borderRadius: 5,
             alignItems: "center",
             justifyContent: "center",
+            marginBottom: SIZES.margin / 3,
           }}
           onPress={() => {
             console.log("Logged In");
             navigation.navigate("Home");
           }}
         >
-          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>LOG IN</Text>
+          <Text
+            style={{
+              color: COLORS.white,
+              ...FONTSIZES.body3,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            LOGIN
+          </Text>
+        </TouchableOpacity>
+
+        <View style={{marginBottom:SIZES.margin}}>
+          <Text
+            style={{
+              fontFamily: "monsterratBold",
+              color: COLORS.secondary,
+              textAlign: "right",
+              fontSize: 10,
+            }}
+            onPress={() => {
+              console.log("Forgot Password");
+              navigation.navigate("Recovery");
+            }}
+          >
+            FORGOT YOUR PASSWORD?
+          </Text>
+        </View>
+
+        <Text style={(styles.subHeading)}>
+          DON'T HAVE AN ACCOUNT?
+        </Text>
+
+        <TouchableOpacity
+          style={{
+            marginTop: SIZES.margin / 2,
+            height: 50,
+            backgroundColor: COLORS.secondary,
+            borderRadius: 5,
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+          onPress={() => {
+            console.log("Ready To Sign Up");
+            navigation.navigate("SignUp");
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.white,
+              ...FONTSIZES.body3,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            SIGN UP
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -125,13 +181,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 4,
     height: 50,
+    fontFamily: "latoRegular",
     color: COLORS.black,
-    ...FONTS.body3,
+    ...FONTSIZES.body3,
   },
   subHeading: {
     color: COLORS.darkgray,
-    ...FONTS.body3,
-    fontWeight: "bold",
+    ...FONTSIZES.body3,
+    fontFamily: "monsterratBold",
   },
 });
 

@@ -13,7 +13,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 import cross from "../assets/images/cross.png";
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
@@ -25,7 +25,7 @@ const BetDetailsLost = ({ navigation }) => {
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          marginVertical: SIZES.margin2 * 4,
+          marginVertical: SIZES.margin2 * 5,
         }}
       >
         <Text style={styles.header}>BET DETAILS</Text>
@@ -56,7 +56,7 @@ const BetDetailsLost = ({ navigation }) => {
         style={{
           alignItems: "center",
           justifyContent: "center",
-          marginTop: 80, //? depends on text
+          marginTop: 60, //? depends on text
         }}
       >
         <Text
@@ -87,7 +87,7 @@ const BetDetailsLost = ({ navigation }) => {
           }}
           /* Bet Action is a variable*/
         >
-          YOU BET... (BET ACTION)
+          YOU BET... <Text style={{fontWeight:"normal"}}>(Bet Action)</Text>
         </Text>
       </View>
     );
@@ -136,16 +136,16 @@ const BetDetailsLost = ({ navigation }) => {
       borderRadius: 4,
       height: 50,
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
       color: COLORS.gray,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
       fontWeight: "bold",
     },
     footer: {
       color: COLORS.gray,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
       fontWeight: "bold",
     },
     header: {
@@ -158,6 +158,7 @@ const BetDetailsLost = ({ navigation }) => {
       fontSize: 32,
       lineHeight: 39,
       fontWeight: "bold",
+      textAlign: "center",
       color: COLORS.white,
     },
     betNumber: {

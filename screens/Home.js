@@ -10,7 +10,7 @@ import {
 
 import logo from "../assets/images/logo.png";
 
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const Home = ({ navigation }) => {
   function renderLogo() {
@@ -53,8 +53,9 @@ const Home = ({ navigation }) => {
         >
           <Text
             style={{
+              fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTS.body4,
+              ...FONTSIZES.body4,
             }}
           >
             SIGN UP
@@ -77,8 +78,9 @@ const Home = ({ navigation }) => {
         >
           <Text
             style={{
+              fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTS.body4,
+              ...FONTSIZES.body4,
             }}
           >
             LOG IN

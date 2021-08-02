@@ -13,7 +13,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 import logo from "../assets/images/logo.png";
 
 /* need to change image. Change BetReceiver, BetAmount, BetAction
@@ -141,16 +141,16 @@ const CashConfirm = ({ navigation }) => {
       borderRadius: 4,
       height: 50,
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
       color: COLORS.gray,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
       fontWeight: "bold",
     },
     footer: {
         color: COLORS.gray,
-        ...FONTS.body3,
+        ...FONTSIZES.body3,
         fontWeight: "bold",
       },
     grayheader: {

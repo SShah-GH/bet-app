@@ -14,9 +14,8 @@ import {
   Platform,
 } from "react-native";
 
-import logo from "../assets/images/logo.png";
-
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import cross from "../assets/images/cross.png";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const DetailsPending = ({ navigation }) => {
   function renderHeader() {
@@ -38,7 +37,7 @@ const DetailsPending = ({ navigation }) => {
         >
           <Image
             /*change to X out button*/
-            source={logo}
+            source={cross}
             resizeMode="contain"
             style={{
               height: 24,
@@ -209,13 +208,14 @@ const DetailsPending = ({ navigation }) => {
       }}
     >
       {renderHeader()}
-      {renderStatus()}
+
+      {/* {renderStatus()}
       {renderValue()}
       {renderDetails()}
       {renderButtonWon()}
       {renderButtonLost()}
       {renderButtonClose()}
-      {renderInfo()}
+      {renderInfo()} */}
     </View>
   );
 };

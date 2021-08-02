@@ -16,7 +16,7 @@ import {
 
 import logo from "../assets/images/logo.png";
 
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -26,8 +26,9 @@ const SignUp = ({ navigation }) => {
       <View>
         <Text
           style={{
+            fontFamily: "monsterratBold",
             color: COLORS.primary,
-            ...FONTS.largeTitle,
+            ...FONTSIZES.largeTitle,
           }}
         >
           SIGN UP
@@ -142,7 +143,15 @@ const SignUp = ({ navigation }) => {
             navigation.navigate("Home");
           }}
         >
-          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>SIGN UP</Text>
+          <Text
+            style={{
+              color: COLORS.white,
+              ...FONTSIZES.body3,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            SIGN UP
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -157,28 +166,30 @@ const SignUp = ({ navigation }) => {
       borderWidth: 1,
       borderRadius: 4,
       height: 50,
+      fontFamily: "latoRegular",
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
+      fontFamily: "monsterratBold",
       color: COLORS.gray,
-      ...FONTS.body3,
-      fontWeight: "bold",
+      ...FONTSIZES.body3,
     },
   });
 
   return (
     <View
-    style={{
-      flex: 1,
-      paddingHorizontal: 40,
-      backgroundColor: "#fff",
-      justifyContent: "center",
-    }}>
+      style={{
+        flex: 1,
+        paddingHorizontal: 40,
+        backgroundColor: "#fff",
+        justifyContent: "center",
+      }}
+    >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
-      </View>
+    </View>
   );
 };
 

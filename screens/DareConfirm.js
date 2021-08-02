@@ -13,7 +13,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 import cross from "../assets/images/cross.png";
 /* need to change image. Change BetReceiver, Dare, BetAction
 and margin accordingly*/
@@ -25,7 +25,7 @@ const DareConfirm = ({ navigation }) => {
             <View style={{
                 flexDirection:"row",
                 justifyContent:"space-between",
-                marginVertical:SIZES.margin2*4,
+                marginVertical:SIZES.margin2*5,
                 }}
                 > 
                 <Text
@@ -120,16 +120,16 @@ const DareConfirm = ({ navigation }) => {
       borderRadius: 4,
       height: 50,
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
       color: COLORS.gray,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
       fontWeight: "bold",
     },
     footer: {
         color: COLORS.gray,
-        ...FONTS.body3,
+        ...FONTSIZES.body3,
         fontWeight: "bold",
       },
     grayheader: {
