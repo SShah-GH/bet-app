@@ -3,6 +3,12 @@ import SignUp from "./SignUp";
 import LogIn from "./LogIn";
 import DashBoard from "./DashBoard";
 import Recovery from "./Recovery";
+import CashConfirm from "./CashConfirm";
+import DareConfirm from "./DareConfirm";
+import BetDetailsWon from "./BetDetailsWon";
+import DetailsPending from "./DetailsPending";
+import BetDetailsLost from "./BetDetailsLost";
+
 
 
 export{
@@ -10,5 +16,10 @@ export{
     SignUp,
     LogIn,
     DashBoard,
-    Recovery
+    Recovery,
+    CashConfirm,
+    DareConfirm,
+    BetDetailsWon,
+    DetailsPending,
+    BetDetailsLost,
 };

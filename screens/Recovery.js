@@ -15,6 +15,11 @@ import {
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
 
+/*I noticed a lot of the font sizes 
+and colors didn't match up. Wasn't sure the 
+equivalent to span for the "LOGIN" part so it
+stays inline. Wasn't sure navigation for Send Email*/
+
 const Recovery = ({ navigation }) => {
   // const [showPassword, stShowPassword] = React.useState(false);
 
@@ -122,6 +127,11 @@ const Recovery = ({ navigation }) => {
       ...FONTS.body3,
       fontWeight: "bold",
     },
+    footer: {
+        color: COLORS.gray,
+        ...FONTS.body3,
+        fontWeight: "bold",
+      },
   });
 
   return (
