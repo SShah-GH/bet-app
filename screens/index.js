@@ -8,6 +8,7 @@ import DareConfirm from "./DareConfirm";
 import BetDetailsWon from "./BetDetailsWon";
 import DetailsPending from "./DetailsPending";
 import BetDetailsLost from "./BetDetailsLost";
+import BetDetailsDisputed from "./BetDetailsDisputed";
 
 
 
@@ -22,4 +23,5 @@ export{
     BetDetailsWon,
     DetailsPending,
     BetDetailsLost,
+    BetDetailsDisputed
 };
