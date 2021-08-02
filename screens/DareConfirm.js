@@ -111,27 +111,7 @@ const DareConfirm = ({ navigation }) => {
   }
 
   const styles = StyleSheet.create({
-    textInput: {
-      textAlign: "center",
-      marginTop: 5,
-      marginBottom: 0,
-      borderColor: COLORS.gray,
-      borderWidth: 1,
-      borderRadius: 4,
-      height: 50,
-      color: COLORS.black,
-      ...FONTSIZES.body3,
-    },
-    subHeading: {
-      color: COLORS.gray,
-      ...FONTSIZES.body3,
-      fontWeight: "bold",
-    },
-    footer: {
-        color: COLORS.gray,
-        ...FONTSIZES.body3,
-        fontWeight: "bold",
-      },
+    
     grayheader: {
         fontSize: 24, 
         lineHeight: 29, 
@@ -152,7 +132,7 @@ const DareConfirm = ({ navigation }) => {
     },
     whiteButton: {
       height: 50,
-      backgroundColor: COLORS.white,
+      backgroundColor: COLORS.transparent,
       borderRadius: 5,
       alignItems: "center",
       justifyContent: "center",
@@ -178,7 +158,6 @@ const DareConfirm = ({ navigation }) => {
     style={{
       flex: 1,
       paddingHorizontal: 40,
-      backgroundColor: "#fff",
     }}>
       {renderHeader()}
       {renderText()}

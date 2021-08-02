@@ -8,7 +8,7 @@ import { useFonts } from "@use-expo/font";
 import AppLoading from "expo-app-loading";
 import { 
   Lato_400Regular,
- Lato_700Bold,
+  Lato_700Bold,
 } from '@expo-google-fonts/lato'
 const theme = {
   ...DefaultTheme,
@@ -30,7 +30,7 @@ const App = () => {
     'robotoBold': require("./assets/fonts/Roboto-Bold.ttf"),
     'monsterratRegular': require("./assets/fonts/Montserrat-Regular.ttf"),
     'monsterratBold': require("./assets/fonts/Montserrat-Bold.ttf"),
-
+    'monsterratSemiBold': require("./assets/fonts/Montserrat-SemiBold.ttf"),
   });
   if(!fontsLoaded){
     return <AppLoading/>
@@ -39,7 +39,7 @@ return (
 
     <NavigationContainer theme={theme} >
       <Stack.Navigator screenOptions={{headerShown: false, }}
-        initialRouteName={"SignUp"} >
+        initialRouteName={"DareConfirm"} >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LogIn" component={LogIn} />

@@ -15,14 +15,16 @@ import {
 } from "react-native";
 
 import cross from "../assets/images/cross.png";
+import grayCross from "../assets/images/gray-cross.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const DetailsPending = ({ navigation }) => {
+
   function renderHeader() {
     return (
       <View
         style={{
-          marginTop: 50,
+          marginTop: SIZES.margin*5,
           flexDirection: "row",
           justifyContent: "space-between",
         }}
@@ -37,7 +39,7 @@ const DetailsPending = ({ navigation }) => {
         >
           <Image
             /*change to X out button*/
-            source={cross}
+            source={grayCross}
             resizeMode="contain"
             style={{
               height: 24,
@@ -53,8 +55,6 @@ const DetailsPending = ({ navigation }) => {
     return (
       <View
         style={{
-          marginTop: 80,
-          flexDirection: "center",
           alignItems: "center",
         }}
       >
@@ -67,8 +67,6 @@ const DetailsPending = ({ navigation }) => {
     return (
       <View
         style={{
-          marginTop: 16,
-          flexDirection: "center",
           justifyContent: "center",
         }}
       >
@@ -81,16 +79,15 @@ const DetailsPending = ({ navigation }) => {
     return (
       <View
         style={{
-          marginTop: 16,
-          flexDirection: "center",
           justifyContent: "center",
+          marginVertical: SIZES.margin,
         }}
       >
-        <Text
-          style={styles.betText}>
-          YOU BET...
-          <Text style={{ fontWeight:"normal" }}>I can throw a
-          football farther than you.</Text>
+        <Text style={styles.betText}>
+          YOU BET...{" "}
+          <Text style={{ fontSize: 28,}}>
+            I can throw a football farther than you.
+          </Text>
         </Text>
       </View>
     );
@@ -98,7 +95,7 @@ const DetailsPending = ({ navigation }) => {
 
   function renderButtonWon() {
     return (
-      <View style={{ marginTop: 16 }}>
+      <View style={{ marginTop: SIZES.margin }}>
         <TouchableOpacity
           style={styles.greenButton}
           onPress={() => {
@@ -114,7 +111,7 @@ const DetailsPending = ({ navigation }) => {
 
   function renderButtonLost() {
     return (
-      <View style={{ marginTop: 16 }}>
+      <View style={{ marginTop: SIZES.margin }}>
         <TouchableOpacity
           style={styles.redButton}
           onPress={() => {
@@ -130,7 +127,7 @@ const DetailsPending = ({ navigation }) => {
 
   function renderButtonClose() {
     return (
-      <View style={{ marginTop: 16 }}>
+      <View style={{ marginTop: SIZES.margin }}>
         <TouchableOpacity
           style={styles.blueButton}
           onPress={() => {
@@ -151,22 +148,20 @@ const DetailsPending = ({ navigation }) => {
 
   const styles = StyleSheet.create({
     grayheader: {
-      fontSize: 24,
-      lineHeight: 29,
-      fontWeight: "bold",
+      ...FONTSIZES.body2,
+      fontFamily: "monsterratBold",
       color: COLORS.gray2,
     },
     betText: {
-      fontSize: 32,
-      lineHeight: 39,
+      ...FONTSIZES.h1,
+      fontFamily: "monsterratBold",
       color: COLORS.gray2,
       textAlign: "center",
-      fontWeight: "bold",
     },
     betNumber: {
-      fontSize: 96,
-      lineHeight: 117,
-      fontWeight: "bold",
+      fontSize: SIZES.margin * 10,
+      lineHeight: SIZES.margin2 * 10,
+      fontFamily: "monsterratSemiBold",
       color: COLORS.primary,
       textAlign: "center",
     },
@@ -193,30 +188,36 @@ const DetailsPending = ({ navigation }) => {
     },
     greenButtonText: {
       color: COLORS.white,
-      fontSize: 16,
+      ...FONTSIZES.body3,
+      fontFamily: "monsterratBold",
       lineHeight: 22,
-      fontWeight: "bold",
     },
   });
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingHorizontal: 40,
-        backgroundColor: "#fff",
-      }}
-    >
-      {renderHeader()}
-
-      {/* {renderStatus()}
-      {renderValue()}
-      {renderDetails()}
-      {renderButtonWon()}
-      {renderButtonLost()}
-      {renderButtonClose()}
-      {renderInfo()} */}
-    </View>
+    <ScrollView>
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: SIZES.padding * 4,
+        }}
+      >
+        {renderHeader()}
+        <View
+          style={{
+            marginVertical: SIZES.margin * 6,
+            justifyContent: "center",
+          }}
+        >
+          {renderStatus()}
+          {renderValue()}
+          {renderDetails()}
+          {renderButtonWon()}
+          {renderButtonLost()}
+          {renderButtonClose()}
+        </View>
+      </View>
+    </ScrollView>
   );
 };
 

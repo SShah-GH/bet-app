@@ -19,6 +19,7 @@ const Home = ({ navigation }) => {
         style={{
           alignItems: "center",
           justifyContent: "center",
+          marginVertical: 30
         }}
       >
         <Image
@@ -94,7 +95,6 @@ const Home = ({ navigation }) => {
     <View
       style={{
         flex: 1,
-        backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
       }}

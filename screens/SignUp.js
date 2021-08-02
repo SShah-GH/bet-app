@@ -182,7 +182,6 @@ const SignUp = ({ navigation }) => {
       style={{
         flex: 1,
         paddingHorizontal: 40,
-        backgroundColor: "#fff",
         justifyContent: "center",
       }}
     >
