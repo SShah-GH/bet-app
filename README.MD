@@ -1,5 +1,5 @@
 
-<h1 align="center" 💸The Bet App💸</h3>
+<h1 align="center"> 💸The Bet App💸</h3>
 
 ### Getting Started
 * Install expo package globally through npm
