@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer,DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
-import { Home, SignUp, LogIn, Recovery, CashConfirm, DareConfirm, BetDetailsWon, DetailsPending} from "./screens";
+import { Home, SignUp, LogIn, Recovery, CashConfirm, DareConfirm, BetDetailsWon, DetailsPending, BetDetailsLost } from "./screens";
 
 
 
@@ -13,7 +13,7 @@ const App = () => {
 return (
     <NavigationContainer >
       <Stack.Navigator screenOptions={{headerShown: false, }}
-        initialRouteName={"BetDetailsWon"} >
+        initialRouteName={"BetDetailsLost"} >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LogIn" component={LogIn} />
@@ -22,6 +22,7 @@ return (
         <Stack.Screen name="DareConfirm" component={DareConfirm} />
         <Stack.Screen name="BetDetailsWon" component={BetDetailsWon} />
         <Stack.Screen name="DetailsPending" component={DetailsPending} />
+        <Stack.Screen name="BetDetailsLost" component={BetDetailsLost} />
       </Stack.Navigator>
     </NavigationContainer>
   );

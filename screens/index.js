@@ -7,6 +7,8 @@ import CashConfirm from "./CashConfirm";
 import DareConfirm from "./DareConfirm";
 import BetDetailsWon from "./BetDetailsWon";
 import DetailsPending from "./DetailsPending";
+import BetDetailsLost from "./BetDetailsLost";
+
 
 
 export{
@@ -18,5 +20,6 @@ export{
     CashConfirm,
     DareConfirm,
     BetDetailsWon,
-    DetailsPending
+    DetailsPending,
+    BetDetailsLost,
 };
