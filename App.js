@@ -39,7 +39,7 @@ return (
 
     <NavigationContainer theme={theme} >
       <Stack.Navigator screenOptions={{headerShown: false, }}
-        initialRouteName={"DareConfirm"} >
+        initialRouteName={"BetDetailsDisputed"} >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="LogIn" component={LogIn} />

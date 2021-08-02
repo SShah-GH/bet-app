@@ -15,17 +15,18 @@ import {
 } from "react-native";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 import cross from "../assets/images/cross.png";
+
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
 
-const BetDetailsLost = ({ navigation }) => {
+const BetDetailsDisputed = ({ navigation }) => {
   function renderHeader() {
     return (
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
-          marginVertical: SIZES.margin2 * 5,
+          marginTop: SIZES.margin2 * 5,
         }}
       >
         <Text style={styles.header}>BET DETAILS</Text>
@@ -56,7 +57,6 @@ const BetDetailsLost = ({ navigation }) => {
         style={{
           alignItems: "center",
           justifyContent: "center",
-          marginTop: 60, //? depends on text
         }}
       >
         <Text
@@ -65,29 +65,9 @@ const BetDetailsLost = ({ navigation }) => {
         >
           YOU TIED YOUR BET AGAINST (NAME)
         </Text>
-        <Text
-          style={{
-            fontSize: 96,
-            lineHeight: 117,
-            fontWeight: "bold",
-            color: COLORS.white,
-            marginTop: 16,
-          }}
-          /* Bet Amount is a variable*/
-        >
-          $23
-        </Text>
-        <Text
-          style={{
-            fontSize: 24,
-            lineHeight: 29,
-            fontWeight: "bold",
-            color: COLORS.white,
-            marginTop: 16,
-          }}
-          /* Bet Action is a variable*/
-        >
-          YOU BET... <Text style={{fontWeight:"normal"}}>(Bet Action)</Text>
+        <Text style={styles.betNumber}>$23</Text>
+        <Text style={styles.betActionText}>
+          YOU BET... <Text style={{ fontFamily:"latoBold" }}>(Bet Action)</Text>
         </Text>
       </View>
     );
@@ -95,12 +75,12 @@ const BetDetailsLost = ({ navigation }) => {
 
   function renderButton() {
     return (
-      <View style={{ marginTop: 16 }}>
+      <View style={{ marginTop: SIZES.margin*2 }}>
         <TouchableOpacity
           style={styles.whiteButton}
           onPress={() => {
             console.log("Betting");
-            navigation.navigate("BetCash");
+            navigation.navigate("Home");
           }}
         >
           <Text style={styles.whiteButtonText}>NEW BET</Text>
@@ -111,65 +91,42 @@ const BetDetailsLost = ({ navigation }) => {
 
   function renderButton2() {
     return (
-      <View style={{ marginTop: 16 }}>
+      <View style={{ marginTop: SIZES.margin }}>
         <TouchableOpacity
-          style={styles.redButton}
+          style={styles.blueButton}
           onPress={() => {
             //?
             console.log("Editing bet");
-            navigation.navigate("BetCash");
+            navigation.navigate("Home");
           }}
         >
-          <Text style={styles.redButtonText}>CASH OUT</Text>
+          <Text style={styles.blueButtonText}>CASH OUT</Text>
         </TouchableOpacity>
       </View>
     );
   }
 
   const styles = StyleSheet.create({
-    textInput: {
-      textAlign: "center",
-      marginTop: 5,
-      marginBottom: 0,
-      borderColor: COLORS.gray,
-      borderWidth: 1,
-      borderRadius: 4,
-      height: 50,
-      color: COLORS.black,
-      ...FONTSIZES.body3,
-    },
-    subHeading: {
-      color: COLORS.gray,
-      ...FONTSIZES.body3,
-      fontWeight: "bold",
-    },
-    footer: {
-      color: COLORS.gray,
-      ...FONTSIZES.body3,
-      fontWeight: "bold",
-    },
     header: {
-      fontSize: 24,
-      lineHeight: 29,
-      fontWeight: "bold",
+      ...FONTSIZES.body2,
+      fontFamily:"monsterratBold",
       color: COLORS.white,
     },
     betText: {
-      fontSize: 32,
-      lineHeight: 39,
-      fontWeight: "bold",
+      ...FONTSIZES.h1,
+      fontFamily:"monsterratBold",
       textAlign: "center",
       color: COLORS.white,
     },
     betNumber: {
-      fontSize: 96,
-      lineHeight: 117,
-      fontWeight: "bold",
+      fontSize: 90,
+      lineHeight: 130,
+      fontFamily: "monsterratSemiBold",
       color: COLORS.white,
     },
     betActionText: {
-      fontSize: 24,
-      lineHeight: 28,
+      ...FONTSIZES.body2,
+      fontFamily:"monsterratBold",
       color: COLORS.white,
     },
     whiteButton: {
@@ -181,7 +138,7 @@ const BetDetailsLost = ({ navigation }) => {
       borderColor: COLORS.white,
       borderWidth: 2,
     },
-    redButton: {
+    blueButton: {
       height: 50,
       backgroundColor: COLORS.secondary,
       borderRadius: 5,
@@ -192,33 +149,38 @@ const BetDetailsLost = ({ navigation }) => {
     },
     whiteButtonText: {
       color: COLORS.secondary,
-      fontSize: 16,
-      lineHeight: 22,
-      fontWeight: "bold",
+      ...FONTSIZES.body3,
+      fontFamily:"monsterratBold",
     },
-    redButtonText: {
+    blueButtonText: {
       color: COLORS.white,
-      fontSize: 16,
-      lineHeight: 22,
-      fontWeight: "bold",
+      ...FONTSIZES.body3,
+      fontFamily:"monsterratBold",
     },
   });
 
   return (
-    <View
-      style={{
-        flex: 1,
+    <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: "space-between",
         paddingHorizontal: 40,
         backgroundColor: COLORS.secondary,
       }}
     >
       {renderHeader()}
+      <View
+        style={{
+          flexGrow: 1,
+          justifyContent: "center",
+        }}
+      >
         {renderText()}
         {renderButton()}
         {renderButton2()}
-
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 
-export default BetDetailsLost;
+export default BetDetailsDisputed;

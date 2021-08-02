@@ -14,40 +14,40 @@ import {
   Platform,
 } from "react-native";
 
-import cross from "../assets/images/cross.png";
+
 import grayCross from "../assets/images/gray-cross.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const DetailsPending = ({ navigation }) => {
-
   function renderHeader() {
     return (
-      <View
-        style={{
-          marginTop: SIZES.margin*5,
-          flexDirection: "row",
-          justifyContent: "space-between",
-        }}
-      >
-        <Text style={styles.grayheader}>BET Details</Text>
 
-        <TouchableOpacity
-          onPress={() => {
-            console.log("To Dashboard");
-            navigation.navigate("DashBoard");
+        <View
+          style={{
+            marginTop: SIZES.margin*5,
+            flexDirection: "row",
+            justifyContent: "space-between",
           }}
         >
-          <Image
-            /*change to X out button*/
-            source={grayCross}
-            resizeMode="contain"
-            style={{
-              height: 24,
-              width: 24,
+          <Text style={styles.grayheader}>BET Details</Text>
+
+          <TouchableOpacity
+            onPress={() => {
+              console.log("To Dashboard");
+              navigation.navigate("DashBoard");
             }}
-          />
-        </TouchableOpacity>
-      </View>
+          >
+            <Image
+              /*change to X out button*/
+              source={grayCross}
+              resizeMode="contain"
+              style={{
+                height: 24,
+                width: 24,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
     );
   }
 
@@ -85,7 +85,7 @@ const DetailsPending = ({ navigation }) => {
       >
         <Text style={styles.betText}>
           YOU BET...{" "}
-          <Text style={{ fontSize: 28,}}>
+          <Text style={{ fontSize: 28 }}>
             I can throw a football farther than you.
           </Text>
         </Text>
@@ -190,32 +190,28 @@ const DetailsPending = ({ navigation }) => {
       color: COLORS.white,
       ...FONTSIZES.body3,
       fontFamily: "monsterratBold",
-      lineHeight: 22,
     },
   });
 
   return (
-    <ScrollView>
-      <View
-        style={{
-          flex: 1,
-          paddingHorizontal: SIZES.padding * 4,
-        }}
-      >
-        {renderHeader()}
-        <View
-          style={{
-            marginVertical: SIZES.margin * 6,
-            justifyContent: "center",
-          }}
-        >
-          {renderStatus()}
-          {renderValue()}
-          {renderDetails()}
-          {renderButtonWon()}
-          {renderButtonLost()}
-          {renderButtonClose()}
-        </View>
+    <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: "space-between",
+        paddingHorizontal: 40,
+      }}
+    >
+      {renderHeader()}
+      <View style={{
+        flexGrow:1,
+        justifyContent:'center',
+      }}>
+      {renderStatus()}
+      {renderValue()}
+      {renderDetails()}
+      {renderButtonWon()}
+      {renderButtonLost()}
+      {renderButtonClose()}
       </View>
     </ScrollView>
   );

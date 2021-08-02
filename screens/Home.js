@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  ScrollView,
   View,
   Text,
   TouchableOpacity,
@@ -39,7 +40,6 @@ const Home = ({ navigation }) => {
         <TouchableOpacity
           style={{
             height: 50,
-            width: 200,
             margin: SIZES.margin,
             marginTop: 0,
             backgroundColor: COLORS.primary,
@@ -56,7 +56,7 @@ const Home = ({ navigation }) => {
             style={{
               fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTSIZES.body4,
+              ...FONTSIZES.body3,
             }}
           >
             SIGN UP
@@ -64,8 +64,7 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            height: 50,
-            width: 200,
+            height: 50,   
             margin: SIZES.margin,
             backgroundColor: COLORS.secondary,
             borderRadius: 5,
@@ -81,7 +80,7 @@ const Home = ({ navigation }) => {
             style={{
               fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTSIZES.body4,
+              ...FONTSIZES.body3,
             }}
           >
             LOG IN
@@ -92,16 +91,16 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <ScrollView
+    contentContainerStyle={{ 
+      flexGrow: 1, 
+      justifyContent: "center" ,
+      paddingHorizontal: 40,
+    }}
+  >
       {renderLogo()}
       {renderButtons()}
-    </View>
+    </ScrollView>
   );
 };
 

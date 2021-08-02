@@ -81,12 +81,12 @@ const SignUp = ({ navigation }) => {
         </View>
 
         {/* Password */}
-        <View style={{ marginTop: SIZES.padding * 2 }}>
+        <View style={{ marginTop: SIZES.padding }}>
           <Text style={styles.subHeading}>PASSSWORD</Text>
           <TextInput
             style={styles.textInput}
             placeholder="Enter Password"
-            placeholderTextColor={COLORS.white}
+            placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
             secureTextEntry={!showPassword}
           />
@@ -103,12 +103,12 @@ const SignUp = ({ navigation }) => {
         </View>
 
         {/* Retype Password */}
-        <View style={{ marginTop: SIZES.padding * 2 }}>
+        <View style={{ marginTop: SIZES.padding }}>
           <Text style={styles.subHeading}>RETYPE PASSSWORD</Text>
           <TextInput
             style={styles.textInput}
             placeholder="Enter Password"
-            placeholderTextColor={COLORS.white}
+            placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
             secureTextEntry={!showPassword}
           />
@@ -129,7 +129,7 @@ const SignUp = ({ navigation }) => {
 
   function renderButton() {
     return (
-      <View style={{ marginTop: SIZES.padding * 3 }}>
+      <View style={{ marginTop: SIZES.padding * 2 }}>
         <TouchableOpacity
           style={{
             height: 50,
@@ -157,6 +157,42 @@ const SignUp = ({ navigation }) => {
     );
   }
 
+  function renderButton2() {
+    return (
+      <View style={{ marginTop: SIZES.padding, flexDirection: "row" }}>
+        <Text
+          style={{
+            color: COLORS.darkgray,
+            ...FONTSIZES.body4,
+            fontFamily: "monsterratBold",
+          }}
+        >
+          {" "}
+          ALREADY MADE AN ACCOUNT?{" "}
+        </Text>
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+          }}
+          onPress={() => {
+            console.log("Going to LogIn");
+            navigation.navigate("LogIn");
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.secondary,
+              ...FONTSIZES.body4,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            {" "}LOGIN→
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
   const styles = StyleSheet.create({
     textInput: {
       textAlign: "center",
@@ -178,17 +214,18 @@ const SignUp = ({ navigation }) => {
   });
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingHorizontal: 40,
+    <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
         justifyContent: "center",
+        paddingHorizontal: 40,
       }}
     >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
-    </View>
+      {renderButton2()}
+    </ScrollView>
   );
 };
 

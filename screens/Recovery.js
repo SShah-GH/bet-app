@@ -109,7 +109,6 @@ const Recovery = ({ navigation }) => {
         </Text>
         <TouchableOpacity
           style={{
-            backgroundColor: COLORS.white,
             justifyContent: "center",
           }}
           onPress={() => {
@@ -157,18 +156,18 @@ const Recovery = ({ navigation }) => {
   });
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingHorizontal: 40,
-        justifyContent: "center",
-      }}
-    >
+    <ScrollView
+    contentContainerStyle={{ 
+      flexGrow: 1, 
+      justifyContent: "center" ,
+      paddingHorizontal: 40,
+    }}
+  >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
       {renderButton2()}
-    </View>
+    </ScrollView>
   );
 };
 

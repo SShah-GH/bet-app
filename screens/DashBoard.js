@@ -5,9 +5,10 @@ import { View,
 
  const DashBoard = () => {
      return(
-        <View>
-            <Text>DashBoard</Text>
-        </View>
+        <View style={{flex:1}}>
+				
+			
+			</View>
      );
  }
 
