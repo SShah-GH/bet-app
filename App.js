@@ -3,7 +3,7 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer,DefaultTheme } from '@react-navigation/native';
 import { createStackNavigator} from '@react-navigation/stack';
-import { Home, SignUp, LogIn, Recovery, CashConfirm, DareConfirm, BetDetailsWon, DetailsPending, BetDetailsLost, BetDetailsDisputed } from "./screens";
+import { Home, SignUp, LogIn, Recovery, CashConfirm, DareConfirm, BetDetailsWon,DashBoard, DetailsPending, BetDetailsLost, BetDetailsDisputed } from "./screens";
 
 
 
@@ -23,7 +23,8 @@ return (
         <Stack.Screen name="BetDetailsWon" component={BetDetailsWon} />
         <Stack.Screen name="DetailsPending" component={DetailsPending} />
         <Stack.Screen name="BetDetailsLost" component={BetDetailsLost} />
-        <Stack.Screen name="BetDetailsDisputed" component={BetDetailsDisputed} />
+        <Stack.Screen name="DashBoard" component={DashBoard} />
+        <Stack.Screen name={"BetDetailsDisputed"} component={BetDetailsDisputed} />
       </Stack.Navigator>
     </NavigationContainer>
   );

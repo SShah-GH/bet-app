@@ -14,8 +14,7 @@ import {
   Platform,
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
-import logo from "../assets/images/logo.png";
-
+import cross from "../assets/images/cross.png";
 /* need to change image. Change BetReceiver, Dare, BetAction
 and margin accordingly*/
 
@@ -24,9 +23,9 @@ const DareConfirm = ({ navigation }) => {
     function renderHeader() {
         return (
             <View style={{
-                marginTop: 50,
                 flexDirection:"row",
                 justifyContent:"space-between",
+                marginVertical:SIZES.margin2*4,
                 }}
                 > 
                 <Text
@@ -38,7 +37,7 @@ const DareConfirm = ({ navigation }) => {
                 </Text>
                 <Image
                 /*change to icon*/
-                  source={logo}
+                  source={cross}
                   resizeMode="contain"
                  style={{
                     height: 24,
@@ -49,33 +48,13 @@ const DareConfirm = ({ navigation }) => {
         );
     }
 
-    function renderIcon() {
-      return (
-        <View
-          style={{
-            alignItems: "flex-start",
-            justifyContent: "end",
-          }}
-        >
-          <Image
-            source={logo}
-            resizeMode="contain"
-            style={{
-              height: 24,
-              width: 24
-            }}
-          />
-        </View>
-      );
-    }
-
     function renderText() {
       return (
         <View
           style={{
             alignItems: "center",
             justifyContent: "center",
-            marginTop: 210 //? depends on text
+            marginTop: 180 //? depends on text
           }}
         >
           <Text
@@ -200,7 +179,6 @@ const DareConfirm = ({ navigation }) => {
       flex: 1,
       paddingHorizontal: 40,
       backgroundColor: "#fff",
-      justifyContent: "center",
     }}>
       {renderHeader()}
       {renderText()}
