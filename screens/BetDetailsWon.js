@@ -36,6 +36,10 @@ const BetDetailsWon = ({ navigation }) => {
                 >
                 BET DETAILS
                 </Text>
+                <TouchableOpacity  onPress={() => {
+                    console.log("To Dashboard");
+                    navigation.navigate("DashBoard");
+                  }}>
                 <Image
                 /*change to icon*/
                   source={logo}
@@ -44,11 +48,9 @@ const BetDetailsWon = ({ navigation }) => {
                     height: 24,
                     width: 24
                   }}
-                  onPress={() => {
-                    console.log("To Dashboard");
-                    navigation.navigate("Dashboard");
-                  }}
-              />
+                  
+                  />
+                  </TouchableOpacity>
             </View>
         );
     }
