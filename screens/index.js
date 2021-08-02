@@ -5,6 +5,7 @@ import DashBoard from "./DashBoard";
 import Recovery from "./Recovery";
 import CashConfirm from "./CashConfirm";
 import DareConfirm from "./DareConfirm";
+import BetDetailsWon from "./BetDetailsWon";
 
 
 export{
@@ -14,5 +15,6 @@ export{
     DashBoard,
     Recovery,
     CashConfirm,
-    DareConfirm
+    DareConfirm,
+    BetDetailsWon
 };
