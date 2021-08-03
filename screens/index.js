@@ -9,7 +9,7 @@ import BetDetailsWon from "./BetDetailsWon";
 import DetailsPending from "./DetailsPending";
 import BetDetailsLost from "./BetDetailsLost";
 import BetDetailsDisputed from "./BetDetailsDisputed";
-
+import BetDare from "./BetDare";
 
 
 export{
@@ -23,5 +23,6 @@ export{
     BetDetailsWon,
     DetailsPending,
     BetDetailsLost,
-    BetDetailsDisputed
+    BetDetailsDisputed,
+    BetDare,
 };
