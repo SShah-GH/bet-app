@@ -14,8 +14,6 @@ import {
   Platform,
 } from "react-native";
 
-import logo from "../assets/images/bet-05.svg";
-
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const SignUp = ({ navigation }) => {

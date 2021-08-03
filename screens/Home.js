@@ -9,7 +9,7 @@ import {
   Animated,
 } from "react-native";
 
-import logo from "../assets/images/bet-05.svg";
+import logo from "../assets/images/logo.png";
 
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
