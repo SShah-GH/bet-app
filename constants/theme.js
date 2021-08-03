@@ -46,13 +46,13 @@ export const SIZES = {
     margin2: 12,
 
     // font sizes
-    largeTitle: 50,
-    h1: 30,
+    largeTitle: 36,
+    h1: 32,
     h2: 22,
     h3: 20,
     h4: 18,
     body1: 30,
-    body2: 20,
+    body2: 24,
     body3: 16,
     body4: 14,
     body5: 12,
@@ -62,8 +62,8 @@ export const SIZES = {
     height
 };
 
-export const FONTS = {
-    largeTitle: {  fontSize: SIZES.largeTitle, lineHeight: 55, fontWeight: "bold" },
+export const FONTSIZES = {
+    largeTitle: {  fontSize: SIZES.largeTitle, lineHeight: 55,},
     h1: {  fontSize: SIZES.h1, lineHeight: 36 },
     h2: {  fontSize: SIZES.h2, lineHeight: 30 },
     h3: {  fontSize: SIZES.h3, lineHeight: 22 },
@@ -75,6 +75,8 @@ export const FONTS = {
     body5: {  fontSize: SIZES.body5, lineHeight: 22 },
 };
 
-const appTheme = { COLORS, SIZES, FONTS };
+
+
+const appTheme = { COLORS, SIZES, FONTSIZES };
 
 export default appTheme;

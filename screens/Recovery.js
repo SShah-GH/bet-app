@@ -13,7 +13,7 @@ import {
   ScrollView,
   Platform,
 } from "react-native";
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 /*I noticed a lot of the font sizes 
 and colors didn't match up. Wasn't sure the 
@@ -29,7 +29,8 @@ const Recovery = ({ navigation }) => {
         <Text
           style={{
             color: COLORS.primary,
-            ...FONTS.largeTitle,
+            ...FONTSIZES.largeTitle,
+            fontFamily: "monsterratBold",
           }}
         >
           RECOVERY
@@ -79,7 +80,13 @@ const Recovery = ({ navigation }) => {
             navigation.navigate("Home");
           }}
         >
-          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>
+          <Text
+            style={{
+              color: COLORS.white,
+              ...FONTSIZES.body3,
+              fontFamily: "monsterratBold",
+            }}
+          >
             SEND EMAIL
           </Text>
         </TouchableOpacity>
@@ -89,14 +96,19 @@ const Recovery = ({ navigation }) => {
 
   function renderButton2() {
     return (
-      <View style={{ marginTop: SIZES.padding , flexDirection:"row"}}>
-        <Text style={{
+      <View style={{ marginTop: SIZES.padding, flexDirection: "row" }}>
+        <Text
+          style={{
             color: COLORS.darkgray,
-            ...FONTS.body3,
-        }}> REMEMBER YOUR PASSWORD? </Text>
+            ...FONTSIZES.body4,
+            fontFamily:"monsterratBold",
+          }}
+        >
+          {" "}
+          REMEMBER YOUR PASSWORD?{" "}
+        </Text>
         <TouchableOpacity
           style={{
-            backgroundColor: COLORS.white,
             justifyContent: "center",
           }}
           onPress={() => {
@@ -104,7 +116,15 @@ const Recovery = ({ navigation }) => {
             navigation.navigate("LogIn");
           }}
         >
-          <Text style={{ color: COLORS.secondary, ...FONTS.body3 }}>LOGIN→</Text>
+          <Text
+            style={{
+              color: COLORS.secondary,
+              ...FONTSIZES.body4,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            LOGIN→
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -119,35 +139,35 @@ const Recovery = ({ navigation }) => {
       borderWidth: 1,
       borderRadius: 4,
       height: 50,
+      fontFamily: "latoRegular",
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
       color: COLORS.gray,
-      ...FONTS.body3,
-      fontWeight: "bold",
+      ...FONTSIZES.body3,
+      fontFamily:"monsterratBold",
     },
     footer: {
-        color: COLORS.gray,
-        ...FONTS.body3,
-        fontWeight: "bold",
-      },
+      color: COLORS.gray,
+      ...FONTSIZES.body3,
+      fontWeight: "bold",
+    },
   });
 
   return (
-    <View
-      style={{
-        flex: 1,
-        paddingHorizontal: 40,
-        backgroundColor: "#fff",
-        justifyContent: "center",
-      }}
-    >
+    <ScrollView
+    contentContainerStyle={{ 
+      flexGrow: 1, 
+      justifyContent: "center" ,
+      paddingHorizontal: 40,
+    }}
+  >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
       {renderButton2()}
-    </View>
+    </ScrollView>
   );
 };
 
