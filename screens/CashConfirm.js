@@ -14,7 +14,7 @@ import {
   Platform,
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
-import logo from "../assets/images/logo.png";
+import cross from "../assets/images/bx-x.svg";
 
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
@@ -38,7 +38,7 @@ const CashConfirm = ({ navigation }) => {
                 </Text>
                 <Image
                 /*change to icon*/
-                  source={logo}
+                  source={cross}
                   resizeMode="contain"
                  style={{
                     height: 24,
@@ -58,7 +58,7 @@ const CashConfirm = ({ navigation }) => {
           }}
         >
           <Image
-            source={logo}
+            source={cross}
             resizeMode="contain"
             style={{
               height: 24,

@@ -14,7 +14,7 @@ import {
   Platform,
 } from "react-native";
 
-import logo from "../assets/images/logo.png";
+import cross from "../assets/images/bet-05.svg";
 
 import { COLORS, SIZES, FONTS } from "../constants/index";
 
@@ -38,7 +38,7 @@ const DetailsPending = ({ navigation }) => {
         >
           <Image
             /*change to X out button*/
-            source={logo}
+            source={cross}
             resizeMode="contain"
             style={{
               height: 24,

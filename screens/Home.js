@@ -8,7 +8,7 @@ import {
   Animated,
 } from "react-native";
 
-import logo from "../assets/images/logo.png";
+import logo from "../assets/images/bet-05.svg";
 
 import { COLORS, SIZES, FONTS } from "../constants/index";
 

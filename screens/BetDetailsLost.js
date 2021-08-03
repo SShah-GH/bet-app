@@ -14,7 +14,7 @@ import {
   Platform,
 } from "react-native";
 import { COLORS, SIZES, FONTS } from "../constants/index";
-import cross from "../assets/images/cross.png";
+import cross from "../assets/images/bet-05.svg";
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
 
