@@ -18,7 +18,7 @@ import {
 import grayCross from "../assets/images/gray-cross.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
-const DashBoard = () => {
+const DashBoard = ({ navigation }) => {
   function renderHeader() {
     return (
 
