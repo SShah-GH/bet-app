@@ -166,10 +166,13 @@ const BetDare = ({ navigation }) => {
       <View
         style={{
           flexDirection: "row",
-          justifyContent: "space-between",
+          justifyContent: "space-around",
+          width: SIZES.width,
+          alignSelf: "center",
+          paddingVertical: 25,
         }}
       >
-        <Text style={styles.header}>$32</Text>
+        <Text style={ styles.header }>$32</Text>
 
         <TouchableOpacity
           onPress={() => {
@@ -277,7 +280,7 @@ const BetDare = ({ navigation }) => {
       contentContainerStyle={{
         flexGrow: 1,
         justifyContent: "space-between",
-        paddingHorizontal: 30,
+        paddingHorizontal: 40,
         backgroundColor: COLORS.primary,
       }}
     >
@@ -292,8 +295,8 @@ const BetDare = ({ navigation }) => {
         {renderHeader2()}
         {renderInputs()}
         {renderButton2()}
-        {renderFooter()}
       </View>
+      {renderFooter()}
     </ScrollView>
   );
 };

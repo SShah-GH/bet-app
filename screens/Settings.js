@@ -35,7 +35,7 @@ const Settings = ({ navigation }) => {
         <TouchableOpacity
           onPress={() => {
             console.log("To Dashboard");
-            navigation.navigate("DashBoard");
+            navigation.navigate("BetDare");
           }}
         >
           <Image
@@ -199,7 +199,7 @@ const Settings = ({ navigation }) => {
           elevation: 21,
         }}
       >
-        <Text style={styles.betText}>$32</Text>
+        <Text style={styles.grayheader}>$32</Text>
 
         <TouchableOpacity
           onPress={() => {
@@ -212,6 +212,7 @@ const Settings = ({ navigation }) => {
             source={bellIcon}
             resizeMode="contain"
             style={{
+              marginHorizontal: 8,
               height: 30,
               width: 30,
             }}
@@ -228,8 +229,8 @@ const Settings = ({ navigation }) => {
             source={profilePicture}
             resizeMode="contain"
             style={{
-              height: 40,
-              width: 40,
+              height: 34,
+              width: 34,
             }}
           />
         </TouchableOpacity>
@@ -275,7 +276,7 @@ const Settings = ({ navigation }) => {
       },
       shadowOpacity: 0.53,
       shadowRadius: 13.97,
-      elevation: 6,
+      elevation: 4,
     },
     blueButton: {
       height: 50,
