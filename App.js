@@ -16,6 +16,7 @@ import {
   BetDetailsLost,
   BetDetailsDisputed,
   BetDare,
+  Settings
 } from "./screens";
 import { useFonts } from "@use-expo/font";
 import AppLoading from "expo-app-loading";
@@ -49,7 +50,7 @@ const App = () => {
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={"BetDare"}
+        initialRouteName={"Settings"}
       >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
@@ -63,7 +64,8 @@ const App = () => {
         <Stack.Screen name="DashBoard" component={DashBoard} />
         <Stack.Screen name="BetDare" component={BetDare} />
         <Stack.Screen name="BetDetailsDisputed" component={BetDetailsDisputed}/>
-    
+        <Stack.Screen name="Settings" component={Settings}/>
+
       </Stack.Navigator>
     </NavigationContainer>
   );

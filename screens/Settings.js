@@ -18,7 +18,7 @@ import {
 import grayCross from "../assets/images/gray-cross.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
-const DashBoard = () => {
+const Settings = ({ navigation }) => {
   function renderHeader() {
     return (
 
@@ -29,7 +29,7 @@ const DashBoard = () => {
             justifyContent: "space-between",
           }}
         >
-          <Text style={styles.grayheader}>Dashboard</Text>
+          <Text style={styles.grayheader}>Settings</Text>
 
           <TouchableOpacity
             onPress={() => {
@@ -56,7 +56,46 @@ const DashBoard = () => {
       ...FONTSIZES.body2,
       fontFamily: "monsterratBold",
       color: COLORS.gray2,
-    }
+    },
+    betText: {
+      ...FONTSIZES.h1,
+      fontFamily: "monsterratBold",
+      color: COLORS.gray2,
+      textAlign: "center",
+    },
+    betNumber: {
+      fontSize: SIZES.margin * 10,
+      lineHeight: SIZES.margin2 * 10,
+      fontFamily: "monsterratSemiBold",
+      color: COLORS.primary,
+      textAlign: "center",
+    },
+    greenButton: {
+      height: 50,
+      backgroundColor: COLORS.primary,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    redButton: {
+      height: 50,
+      backgroundColor: COLORS.red,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    blueButton: {
+      height: 50,
+      backgroundColor: COLORS.secondary,
+      borderRadius: 5,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    greenButtonText: {
+      color: COLORS.white,
+      ...FONTSIZES.body3,
+      fontFamily: "monsterratBold",
+    },
   });
 
   return (
@@ -77,4 +116,4 @@ const DashBoard = () => {
   );
 };
 
-export default DashBoard;
+export default Settings;
