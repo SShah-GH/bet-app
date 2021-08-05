@@ -13,6 +13,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Platform,
+  StatusBar,
 } from "react-native";
 
 import grayCross from "../assets/images/gray-cross.png";
@@ -179,6 +180,36 @@ const Settings = ({ navigation }) => {
     );
   }
 
+  function renderButtonSignOut() {
+    return (
+      <View style={{ marginTop: SIZES.margin * 4 }}>
+        <TouchableOpacity
+          style={styles.greenButton}
+          onPress={() => {
+            console.log("Invite Friends");
+            navigation.navigate("Home");
+          }}
+        >
+          <Text style={styles.greenButtonText}>SIGN OUT</Text>
+        </TouchableOpacity>
+
+        <Text
+          style={{
+            textAlign: "center",
+            fontFamily: "latoRegular",
+            color: COLORS.gray,
+            fontSize: 12,
+            lineHeight: 20,
+          }}
+        >
+          Copyright TheBetApp.{" "}
+          <Text style={{ color: COLORS.secondary }}>Privacy Policy</Text>
+          and <Text style={{ color: COLORS.secondary }}>Terms of Service.</Text>
+        </Text>
+      </View>
+    );
+  }
+
   function renderFooter() {
     return (
       <View
@@ -194,11 +225,9 @@ const Settings = ({ navigation }) => {
             width: 0,
             height: 10,
           },
-          shadowOpacity: 0.1,
+          shadowOpacity: 0.53,
           shadowRadius: 13.97,
-          elevation: 10,
-          position:"absolute",
-          bottom:0
+          elevation: 21,
         }}
       >
         <Text style={styles.grayheader}>$32</Text>
@@ -278,7 +307,7 @@ const Settings = ({ navigation }) => {
       },
       shadowOpacity: 0.1,
       shadowRadius: 13.97,
-      elevation: 1,
+      elevation: 2,
     },
     blueButton: {
       height: 50,
@@ -300,27 +329,32 @@ const Settings = ({ navigation }) => {
   });
 
   return (
-    <View>
     <ScrollView
       contentContainerStyle={{
         flexGrow: 1,
+        justifyContent: "space-between",
         paddingHorizontal: 40,
+        backgroundColor: COLORS.white,
       }}
     >
       {renderHeader()}
-      {renderImage()}
-      {renderName()}
-      {renderButtonInviteFriends()}
-      {renderAccount()}
-      {renderBilling()}
-      {renderPrivacySecurity()}
-      {renderHelp()}
+      <View
+        style={{
+          flexGrow: 1,
+          justifyContent: "center",
+        }}
+      >
+        {renderImage()}
+        {renderName()}
+        {renderButtonInviteFriends()}
+        {renderAccount()}
+        {renderBilling()}
+        {renderPrivacySecurity()}
+        {renderHelp()}
+        {renderButtonSignOut()}
+      </View>
+      {renderFooter()}
     </ScrollView>
-
-    {renderFooter()}
-    </View>
-
-    
   );
 };
 

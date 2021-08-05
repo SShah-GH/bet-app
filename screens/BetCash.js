@@ -68,8 +68,8 @@ const BetCash = ({ navigation }) => {
               source={profilePicture}
               resizeMode="contain"
               style={{
-                height: 35,
-                width: 35,
+                height: 38,
+                width: 38,
               }}
             />
           </TouchableOpacity>
@@ -81,7 +81,13 @@ const BetCash = ({ navigation }) => {
 
   function renderInput() {
     return (
-      <View>
+      <View style={{
+        backgroundColor: COLORS.white,
+        borderRadius: 10,
+        paddingVertical: SIZES.padding, 
+        paddingHorizontal: SIZES.padding*2
+      }}>
+        <Text style={styles.whiteButtonText}>YOU BET $30...</Text>
         <TextInput
           style={styles.textInput}
           placeholder="Type Your Bet Here..."
@@ -154,7 +160,7 @@ const BetCash = ({ navigation }) => {
           width: SIZES.width,
           alignSelf: "center",
           alignItems: "center",
-          paddingVertical: 25,
+          paddingVertical: 15,
         }}
       >
     
@@ -206,12 +212,11 @@ const BetCash = ({ navigation }) => {
 
     textInput: {
       marginBottom: SIZES.margin,
-      padding: SIZES.padding * 2,
       backgroundColor: COLORS.white,
       borderColor: COLORS.transparent,
       borderWidth: 1,
       borderRadius: 10,
-      height: 120,
+      height: 60,
       fontFamily: "latoRegular",
       color: COLORS.black,
       ...FONTSIZES.body3,
@@ -219,7 +224,7 @@ const BetCash = ({ navigation }) => {
 
     whiteButton: {
       height: 50,
-      width: 150,
+      width: 160,
       backgroundColor: COLORS.white,
       borderRadius: 5,
       alignItems: "center",
@@ -230,7 +235,7 @@ const BetCash = ({ navigation }) => {
     },
     greenButton: {
       height: 50,
-      width: 150,
+      width: 160,
       backgroundColor: COLORS.primary,
       borderRadius: 5,
       alignItems: "center",
