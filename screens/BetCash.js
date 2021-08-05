@@ -22,7 +22,7 @@ import trophyIcon from "../assets/images/trophy.png"
 /* need to change image. Change BetReceiver, BetAmount, BetAction
 and margin accordingly*/
 
-const BetDare = ({ navigation }) => {
+const BetCash = ({ navigation }) => {
   function renderHeader() {
     return (
       <View
@@ -78,29 +78,10 @@ const BetDare = ({ navigation }) => {
     );
   }
 
-  function renderHeader2() {
-    return (
-      <View
-        style={{
-          marginVertical: SIZES.margin,
-        }}
-      >
-        <Text style={styles.header}>WHAT'S THE DARE? </Text>
-      </View>
-    );
-  }
 
-  function renderInputs() {
+  function renderInput() {
     return (
       <View>
-        <TextInput
-          style={styles.textInput}
-          placeholder="Type Your Dare Here..."
-          placeholderTextColor={COLORS.gray}
-          selectionColor={COLORS.white}
-          multiline={true}
-          textAlignVertical={"top"}
-        />
         <TextInput
           style={styles.textInput}
           placeholder="Type Your Bet Here..."
@@ -123,21 +104,22 @@ const BetDare = ({ navigation }) => {
         }}
       >
         <TouchableOpacity
-          style={styles.greenButton}
-          onPress={() => {
-            console.log("Betting");
-            navigation.navigate("BetCash");
-          }}
-        >
-          <Text style={styles.greenButtonText}>BET CASH</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
           style={styles.whiteButton}
           onPress={() => {
             console.log("Betting");
           }}
         >
-          <Text style={styles.whiteButtonText}>BET DARE</Text>
+          <Text style={styles.whiteButtonText}>BET CASH</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity
+          style={styles.greenButton}
+          onPress={() => {
+            console.log("Betting");
+            navigation.navigate("BetDare");
+          }}
+        >
+          <Text style={styles.greenButtonText}>BET DARE</Text>
         </TouchableOpacity>
       </View>
     );
@@ -229,7 +211,7 @@ const BetDare = ({ navigation }) => {
       borderColor: COLORS.transparent,
       borderWidth: 1,
       borderRadius: 10,
-      height: 180,
+      height: 120,
       fontFamily: "latoRegular",
       color: COLORS.black,
       ...FONTSIZES.body3,
@@ -296,8 +278,8 @@ const BetDare = ({ navigation }) => {
           justifyContent: "center",
         }}
       >
-        {renderHeader2()}
-        {renderInputs()}
+    
+        {renderInput()}
         {renderButton2()}
       </View>
       {renderFooter()}
@@ -305,4 +287,4 @@ const BetDare = ({ navigation }) => {
   );
 };
 
-export default BetDare;
+export default BetCash;

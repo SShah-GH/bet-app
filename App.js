@@ -16,7 +16,8 @@ import {
   BetDetailsLost,
   BetDetailsDisputed,
   BetDare,
-  Settings
+  BetCash,
+  Settings,
 } from "./screens";
 import { useFonts } from "@use-expo/font";
 import AppLoading from "expo-app-loading";
@@ -62,10 +63,25 @@ const App = () => {
         <Stack.Screen name="DetailsPending" component={DetailsPending} />
         <Stack.Screen name="BetDetailsLost" component={BetDetailsLost} />
         <Stack.Screen name="DashBoard" component={DashBoard} />
-        <Stack.Screen name="BetDare" component={BetDare} />
-        <Stack.Screen name="BetDetailsDisputed" component={BetDetailsDisputed}/>
-        <Stack.Screen name="Settings" component={Settings}/>
-
+        <Stack.Screen
+          name="BetDare"
+          component={BetDare}
+          options={{
+            animationEnabled: false,
+          }}
+        />
+        <Stack.Screen
+          name="BetCash"
+          component={BetCash}
+          options={{
+            animationEnabled: false,
+          }}
+        />
+        <Stack.Screen
+          name="BetDetailsDisputed"
+          component={BetDetailsDisputed}
+        />
+        <Stack.Screen name="Settings" component={Settings} />
       </Stack.Navigator>
     </NavigationContainer>
   );

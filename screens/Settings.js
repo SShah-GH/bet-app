@@ -15,61 +15,60 @@ import {
   Platform,
 } from "react-native";
 
-
 import grayCross from "../assets/images/gray-cross.png";
 import profilePicture from "../assets/images/profile-picture.png";
+import bellIcon from "../assets/images/bell-icon.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const Settings = ({ navigation }) => {
   function renderHeader() {
     return (
+      <View
+        style={{
+          marginTop: SIZES.margin * 5,
+          flexDirection: "row",
+          justifyContent: "space-between",
+        }}
+      >
+        <Text style={styles.grayheader}>SETTINGS</Text>
 
-        <View
-          style={{
-            marginTop: SIZES.margin*5,
-            flexDirection: "row",
-            justifyContent: "space-between",
+        <TouchableOpacity
+          onPress={() => {
+            console.log("To Dashboard");
+            navigation.navigate("BetDare");
           }}
         >
-          <Text style={styles.grayheader}>SETTINGS</Text>
-
-          <TouchableOpacity
-            onPress={() => {
-              console.log("To Dashboard");
-              navigation.navigate("DashBoard");
+          <Image
+            /*change to X out button*/
+            source={grayCross}
+            resizeMode="contain"
+            style={{
+              height: 24,
+              width: 24,
             }}
-          >
-            <Image
-              /*change to X out button*/
-              source={grayCross}
-              resizeMode="contain"
-              style={{
-                height: 24,
-                width: 24,
-              }}
-            />
-          </TouchableOpacity>
-        </View>
+          />
+        </TouchableOpacity>
+      </View>
     );
   }
 
   function renderImage() {
-      return (
-        <View
+    return (
+      <View
         style={{
           alignItems: "center",
         }}
       >
         <Image
-            source={profilePicture}
-            resizeMode="contain"
-            style={{
-              height: 96,
-              width: 96,
-            }}
+          source={profilePicture}
+          resizeMode="contain"
+          style={{
+            height: 96,
+            width: 96,
+          }}
         />
       </View>
-      )
+    );
   }
 
   function renderName() {
@@ -86,25 +85,25 @@ const Settings = ({ navigation }) => {
 
   function renderButtonInviteFriends() {
     return (
-        <View style={{ marginTop: SIZES.margin }}>
-          <TouchableOpacity
-            style={styles.greenButton}
-            onPress={() => {
-              console.log("Invite Friends");
-              navigation.navigate("Settings");
-            }}
-          >
-            <Text style={styles.greenButtonText}>INVITE FRIENDS</Text>
-          </TouchableOpacity>
-        </View>
-      );
+      <View style={{ marginTop: SIZES.margin }}>
+        <TouchableOpacity
+          style={styles.greenButton}
+          onPress={() => {
+            console.log("Invite Friends");
+            navigation.navigate("Settings");
+          }}
+        >
+          <Text style={styles.greenButtonText}>INVITE FRIENDS</Text>
+        </TouchableOpacity>
+      </View>
+    );
   }
 
   function renderAccount() {
     return (
-      <View 
+      <View
         style={{
-        marginTop: SIZES.margin*3,
+          marginTop: SIZES.margin * 3,
         }}
       >
         <TouchableOpacity
@@ -122,9 +121,9 @@ const Settings = ({ navigation }) => {
 
   function renderBilling() {
     return (
-      <View 
+      <View
         style={{
-        marginTop: SIZES.margin,
+          marginTop: SIZES.margin,
         }}
       >
         <TouchableOpacity
@@ -142,9 +141,9 @@ const Settings = ({ navigation }) => {
 
   function renderPrivacySecurity() {
     return (
-      <View 
+      <View
         style={{
-        marginTop: SIZES.margin,
+          marginTop: SIZES.margin,
         }}
       >
         <TouchableOpacity
@@ -154,7 +153,7 @@ const Settings = ({ navigation }) => {
             navigation.navigate("Settings");
           }}
         >
-          <Text style={styles.grayButtonText}>PRIVACY {'\u0026'} SECURITY</Text>
+          <Text style={styles.grayButtonText}>PRIVACY {"\u0026"} SECURITY</Text>
         </TouchableOpacity>
       </View>
     );
@@ -162,9 +161,9 @@ const Settings = ({ navigation }) => {
 
   function renderHelp() {
     return (
-      <View 
+      <View
         style={{
-        marginTop: SIZES.margin,
+          marginTop: SIZES.margin,
         }}
       >
         <TouchableOpacity
@@ -180,54 +179,66 @@ const Settings = ({ navigation }) => {
     );
   }
 
-  function renderSignOut() {
-    return (
-        <View style={{ marginTop: SIZES.margin*3 }}>
-          <TouchableOpacity
-            style={styles.greenButton}
-            onPress={() => {
-              console.log("Signed out");
-              navigation.navigate("Home");
-            }}
-          >
-            <Text style={styles.greenButtonText}>SIGN OUT</Text>
-          </TouchableOpacity>
-        </View>
-      );
-  }
-
   function renderFooter() {
     return (
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-around",
+          backgroundColor: COLORS.white,
+          width: SIZES.width,
+          alignSelf: "center",
+          paddingVertical: 25,
+          shadowColor: "#000",
+          shadowOffset: {
+            width: 0,
+            height: 10,
+          },
+          shadowOpacity: 0.1,
+          shadowRadius: 13.97,
+          elevation: 10,
+          position:"absolute",
+          bottom:0
+        }}
+      >
+        <Text style={styles.grayheader}>$32</Text>
 
-        <View
-          style={{
-            height:96
+        <TouchableOpacity
+          onPress={() => {
+            console.log("To Dashboard");
+            navigation.navigate("DashBoard");
           }}
         >
-          <Image style={styles.grayheader}
-            FOOTER
-          />
-
-          <TouchableOpacity
-            onPress={() => {
-              console.log("To Dashboard");
-              navigation.navigate("DashBoard");
+          <Image
+            /*change to icon*/
+            source={bellIcon}
+            resizeMode="contain"
+            style={{
+              marginHorizontal: 8,
+              height: 30,
+              width: 30,
             }}
-          >
-            <Image
-              /*change to X out button*/
-              source={grayCross}
-              resizeMode="contain"
-              style={{
-                height: 24,
-                width: 24,
-              }}
-            />
-          </TouchableOpacity>
-        </View>
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            console.log("To Dashboard");
+            navigation.navigate("DashBoard");
+          }}
+        >
+          <Image
+            /*change to icon*/
+            source={profilePicture}
+            resizeMode="contain"
+            style={{
+              height: 34,
+              width: 34,
+            }}
+          />
+        </TouchableOpacity>
+      </View>
     );
   }
-
 
   const styles = StyleSheet.create({
     grayheader: {
@@ -261,6 +272,13 @@ const Settings = ({ navigation }) => {
       borderRadius: 5,
       alignItems: "center",
       justifyContent: "center",
+      shadowOffset: {
+        width: 0,
+        height: 10,
+      },
+      shadowOpacity: 0.1,
+      shadowRadius: 13.97,
+      elevation: 1,
     },
     blueButton: {
       height: 50,
@@ -282,19 +300,14 @@ const Settings = ({ navigation }) => {
   });
 
   return (
+    <View>
     <ScrollView
       contentContainerStyle={{
         flexGrow: 1,
-        justifyContent: "space-between",
         paddingHorizontal: 40,
       }}
     >
       {renderHeader()}
-      <View style={{
-        flexGrow:1,
-        flex:1,
-        justifyContent:'center'
-      }}>
       {renderImage()}
       {renderName()}
       {renderButtonInviteFriends()}
@@ -302,10 +315,12 @@ const Settings = ({ navigation }) => {
       {renderBilling()}
       {renderPrivacySecurity()}
       {renderHelp()}
-      {renderSignOut()}
-      </View>
-      {renderFooter()}
     </ScrollView>
+
+    {renderFooter()}
+    </View>
+
+    
   );
 };
 

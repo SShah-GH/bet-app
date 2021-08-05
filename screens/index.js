@@ -10,6 +10,7 @@ import DetailsPending from "./DetailsPending";
 import BetDetailsLost from "./BetDetailsLost";
 import BetDetailsDisputed from "./BetDetailsDisputed";
 import BetDare from "./BetDare";
+import BetCash from "./BetCash";
 import Settings from "./Settings";
 
 
@@ -26,5 +27,6 @@ export{
     BetDetailsLost,
     BetDetailsDisputed,
     BetDare,
+    BetCash,
     Settings
 };
