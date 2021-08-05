@@ -31,7 +31,7 @@ const Settings = ({ navigation }) => {
             justifyContent: "space-between",
           }}
         >
-          <Text style={styles.grayheader}>Settings</Text>
+          <Text style={styles.grayheader}>SETTINGS</Text>
 
           <TouchableOpacity
             onPress={() => {
@@ -180,6 +180,55 @@ const Settings = ({ navigation }) => {
     );
   }
 
+  function renderSignOut() {
+    return (
+        <View style={{ marginTop: SIZES.margin*3 }}>
+          <TouchableOpacity
+            style={styles.greenButton}
+            onPress={() => {
+              console.log("Signed out");
+              navigation.navigate("Home");
+            }}
+          >
+            <Text style={styles.greenButtonText}>SIGN OUT</Text>
+          </TouchableOpacity>
+        </View>
+      );
+  }
+
+  function renderFooter() {
+    return (
+
+        <View
+          style={{
+            height:96
+          }}
+        >
+          <Image style={styles.grayheader}
+            FOOTER
+          />
+
+          <TouchableOpacity
+            onPress={() => {
+              console.log("To Dashboard");
+              navigation.navigate("DashBoard");
+            }}
+          >
+            <Image
+              /*change to X out button*/
+              source={grayCross}
+              resizeMode="contain"
+              style={{
+                height: 24,
+                width: 24,
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+    );
+  }
+
+
   const styles = StyleSheet.create({
     grayheader: {
       ...FONTSIZES.body2,
@@ -243,7 +292,8 @@ const Settings = ({ navigation }) => {
       {renderHeader()}
       <View style={{
         flexGrow:1,
-        justifyContent:'center',
+        flex:1,
+        justifyContent:'center'
       }}>
       {renderImage()}
       {renderName()}
@@ -252,8 +302,9 @@ const Settings = ({ navigation }) => {
       {renderBilling()}
       {renderPrivacySecurity()}
       {renderHelp()}
-
+      {renderSignOut()}
       </View>
+      {renderFooter()}
     </ScrollView>
   );
 };
