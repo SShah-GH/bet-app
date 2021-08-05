@@ -14,9 +14,7 @@ import {
   Platform,
 } from "react-native";
 
-import logo from "../assets/images/logo.png";
-
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -26,8 +24,9 @@ const SignUp = ({ navigation }) => {
       <View>
         <Text
           style={{
+            fontFamily: "monsterratBold",
             color: COLORS.primary,
-            ...FONTS.largeTitle,
+            ...FONTSIZES.largeTitle,
           }}
         >
           SIGN UP
@@ -80,12 +79,12 @@ const SignUp = ({ navigation }) => {
         </View>
 
         {/* Password */}
-        <View style={{ marginTop: SIZES.padding * 2 }}>
+        <View style={{ marginTop: SIZES.padding }}>
           <Text style={styles.subHeading}>PASSSWORD</Text>
           <TextInput
             style={styles.textInput}
             placeholder="Enter Password"
-            placeholderTextColor={COLORS.white}
+            placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
             secureTextEntry={!showPassword}
           />
@@ -102,12 +101,12 @@ const SignUp = ({ navigation }) => {
         </View>
 
         {/* Retype Password */}
-        <View style={{ marginTop: SIZES.padding * 2 }}>
+        <View style={{ marginTop: SIZES.padding }}>
           <Text style={styles.subHeading}>RETYPE PASSSWORD</Text>
           <TextInput
             style={styles.textInput}
             placeholder="Enter Password"
-            placeholderTextColor={COLORS.white}
+            placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
             secureTextEntry={!showPassword}
           />
@@ -128,7 +127,7 @@ const SignUp = ({ navigation }) => {
 
   function renderButton() {
     return (
-      <View style={{ marginTop: SIZES.padding * 3 }}>
+      <View style={{ marginTop: SIZES.padding * 2 }}>
         <TouchableOpacity
           style={{
             height: 50,
@@ -142,7 +141,51 @@ const SignUp = ({ navigation }) => {
             navigation.navigate("Home");
           }}
         >
-          <Text style={{ color: COLORS.white, ...FONTS.body3 }}>SIGN UP</Text>
+          <Text
+            style={{
+              color: COLORS.white,
+              ...FONTSIZES.body3,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            SIGN UP
+          </Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
+
+  function renderButton2() {
+    return (
+      <View style={{ marginTop: SIZES.padding, flexDirection: "row" }}>
+        <Text
+          style={{
+            color: COLORS.darkgray,
+            ...FONTSIZES.body4,
+            fontFamily: "monsterratBold",
+          }}
+        >
+          {" "}
+          ALREADY MADE AN ACCOUNT?{" "}
+        </Text>
+        <TouchableOpacity
+          style={{
+            justifyContent: "center",
+          }}
+          onPress={() => {
+            console.log("Going to LogIn");
+            navigation.navigate("LogIn");
+          }}
+        >
+          <Text
+            style={{
+              color: COLORS.secondary,
+              ...FONTSIZES.body4,
+              fontFamily: "monsterratBold",
+            }}
+          >
+            {" "}LOGIN→
+          </Text>
         </TouchableOpacity>
       </View>
     );
@@ -157,28 +200,30 @@ const SignUp = ({ navigation }) => {
       borderWidth: 1,
       borderRadius: 4,
       height: 50,
+      fontFamily: "latoRegular",
       color: COLORS.black,
-      ...FONTS.body3,
+      ...FONTSIZES.body3,
     },
     subHeading: {
+      fontFamily: "monsterratBold",
       color: COLORS.gray,
-      ...FONTS.body3,
-      fontWeight: "bold",
+      ...FONTSIZES.body3,
     },
   });
 
   return (
-    <View
-    style={{
-      flex: 1,
-      paddingHorizontal: 40,
-      backgroundColor: "#fff",
-      justifyContent: "center",
-    }}>
+    <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: "center",
+        paddingHorizontal: 40,
+      }}
+    >
       {renderHeader()}
       {renderForm()}
       {renderButton()}
-      </View>
+      {renderButton2()}
+    </ScrollView>
   );
 };
 

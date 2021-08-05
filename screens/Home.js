@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  ScrollView,
   View,
   Text,
   TouchableOpacity,
@@ -10,7 +11,7 @@ import {
 
 import logo from "../assets/images/logo.png";
 
-import { COLORS, SIZES, FONTS } from "../constants/index";
+import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const Home = ({ navigation }) => {
   function renderLogo() {
@@ -19,6 +20,7 @@ const Home = ({ navigation }) => {
         style={{
           alignItems: "center",
           justifyContent: "center",
+          marginVertical: 30
         }}
       >
         <Image
@@ -38,7 +40,6 @@ const Home = ({ navigation }) => {
         <TouchableOpacity
           style={{
             height: 50,
-            width: 200,
             margin: SIZES.margin,
             marginTop: 0,
             backgroundColor: COLORS.primary,
@@ -53,8 +54,9 @@ const Home = ({ navigation }) => {
         >
           <Text
             style={{
+              fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTS.body4,
+              ...FONTSIZES.body3,
             }}
           >
             SIGN UP
@@ -62,8 +64,7 @@ const Home = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           style={{
-            height: 50,
-            width: 200,
+            height: 50,   
             margin: SIZES.margin,
             backgroundColor: COLORS.secondary,
             borderRadius: 5,
@@ -77,8 +78,9 @@ const Home = ({ navigation }) => {
         >
           <Text
             style={{
+              fontFamily:"monsterratBold",
               color: COLORS.white,
-              ...FONTS.body4,
+              ...FONTSIZES.body3,
             }}
           >
             LOG IN
@@ -89,17 +91,16 @@ const Home = ({ navigation }) => {
   }
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: "#fff",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <ScrollView
+    contentContainerStyle={{ 
+      flexGrow: 1, 
+      justifyContent: "center" ,
+      paddingHorizontal: 40,
+    }}
+  >
       {renderLogo()}
       {renderButtons()}
-    </View>
+    </ScrollView>
   );
 };
 
