@@ -194,9 +194,11 @@ const Settings = ({ navigation }) => {
             width: 0,
             height: 10,
           },
-          shadowOpacity: 0.53,
+          shadowOpacity: 0.1,
           shadowRadius: 13.97,
-          elevation: 21,
+          elevation: 10,
+          position:"absolute",
+          bottom:0
         }}
       >
         <Text style={styles.grayheader}>$32</Text>
@@ -274,9 +276,9 @@ const Settings = ({ navigation }) => {
         width: 0,
         height: 10,
       },
-      shadowOpacity: 0.53,
+      shadowOpacity: 0.1,
       shadowRadius: 13.97,
-      elevation: 4,
+      elevation: 1,
     },
     blueButton: {
       height: 50,
@@ -298,30 +300,27 @@ const Settings = ({ navigation }) => {
   });
 
   return (
+    <View>
     <ScrollView
       contentContainerStyle={{
         flexGrow: 1,
-        justifyContent: "space-between",
         paddingHorizontal: 40,
       }}
     >
       {renderHeader()}
-      <View
-        style={{
-          flexGrow: 1,
-          justifyContent: "center",
-        }}
-      >
-        {renderImage()}
-        {renderName()}
-        {renderButtonInviteFriends()}
-        {renderAccount()}
-        {renderBilling()}
-        {renderPrivacySecurity()}
-        {renderHelp()}
-      </View>
-      {renderFooter()}
+      {renderImage()}
+      {renderName()}
+      {renderButtonInviteFriends()}
+      {renderAccount()}
+      {renderBilling()}
+      {renderPrivacySecurity()}
+      {renderHelp()}
     </ScrollView>
+
+    {renderFooter()}
+    </View>
+
+    
   );
 };
 
