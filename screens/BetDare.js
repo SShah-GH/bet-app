@@ -154,7 +154,7 @@ const BetDare = ({ navigation }) => {
           style={styles.greenButton2}
           onPress={() => {
             console.log("Betting");
-            navigation.navigate("Home");
+            navigation.navigate("BetContact");
           }}
         >
           <Text style={styles.greenButtonText}>SEND BET</Text>
