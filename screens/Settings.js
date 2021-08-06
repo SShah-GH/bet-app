@@ -19,6 +19,8 @@ import {
 import grayCross from "../assets/images/gray-cross.png";
 import profilePicture from "../assets/images/profile-picture.png";
 import bellIcon from "../assets/images/bell-icon.png";
+import trophyGray from "../assets/images/trophy-gray.png"
+import logoGray from "../assets/images/logo-gray.png"
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 
 const Settings = ({ navigation }) => {
@@ -216,21 +218,21 @@ const Settings = ({ navigation }) => {
         style={{
           flexDirection: "row",
           justifyContent: "space-around",
-          backgroundColor: COLORS.white,
           width: SIZES.width,
           alignSelf: "center",
-          paddingVertical: 25,
-          shadowColor: "#000",
+          alignItems: "center",
+          paddingVertical: 15,
           shadowOffset: {
-            width: 0,
+            width: 10,
             height: 10,
           },
-          shadowOpacity: 0.53,
-          shadowRadius: 13.97,
-          elevation: 21,
+          shadowOpacity: 0.8,
+          elevation: 2,
         }}
       >
-        <Text style={styles.grayheader}>$32</Text>
+    
+          <Text style={styles.grayheader}>$32</Text>
+   
 
         <TouchableOpacity
           onPress={() => {
@@ -240,12 +242,11 @@ const Settings = ({ navigation }) => {
         >
           <Image
             /*change to icon*/
-            source={bellIcon}
+            source={logoGray}
             resizeMode="contain"
             style={{
-              marginHorizontal: 8,
-              height: 30,
-              width: 30,
+              height: 60,
+              width: 60,
             }}
           />
         </TouchableOpacity>
@@ -257,7 +258,7 @@ const Settings = ({ navigation }) => {
         >
           <Image
             /*change to icon*/
-            source={profilePicture}
+            source={trophyGray}
             resizeMode="contain"
             style={{
               height: 34,
@@ -273,7 +274,7 @@ const Settings = ({ navigation }) => {
     grayheader: {
       ...FONTSIZES.body2,
       fontFamily: "monsterratBold",
-      color: COLORS.gray2,
+      color: COLORS.gray,
     },
     betText: {
       ...FONTSIZES.h1,

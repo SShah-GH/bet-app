@@ -224,7 +224,7 @@ const BetCash = ({ navigation }) => {
 
     whiteButton: {
       height: 50,
-      width: 160,
+      width: "48%",
       backgroundColor: COLORS.white,
       borderRadius: 5,
       alignItems: "center",
@@ -235,7 +235,7 @@ const BetCash = ({ navigation }) => {
     },
     greenButton: {
       height: 50,
-      width: 160,
+      width: "48%",
       backgroundColor: COLORS.primary,
       borderRadius: 5,
       alignItems: "center",
