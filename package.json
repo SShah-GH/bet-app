@@ -28,8 +28,7 @@
     "react-native-screens": "~3.4.0",
     "react-native-unimodules": "~0.14.5",
     "react-native-web": "~0.13.12",
-    "react-navigation": "^4.4.4",
-    "undefined": "@expo-google-fonts/"
+    "react-navigation": "^4.4.4"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8"
