@@ -12,6 +12,7 @@ import BetDetailsDisputed from "./BetDetailsDisputed";
 import BetDare from "./BetDare";
 import BetCash from "./BetCash";
 import Settings from "./Settings";
+import BetContact from "./BetContact";
 
 
 export{
@@ -28,5 +29,6 @@ export{
     BetDetailsDisputed,
     BetDare,
     BetCash,
-    Settings
+    Settings,
+    BetContact
 };

@@ -68,8 +68,8 @@ const BetDare = ({ navigation }) => {
               source={profilePicture}
               resizeMode="contain"
               style={{
-                height: 35,
-                width: 35,
+                height: 38,
+                width: 38,
               }}
             />
           </TouchableOpacity>
@@ -172,7 +172,7 @@ const BetDare = ({ navigation }) => {
           width: SIZES.width,
           alignSelf: "center",
           alignItems: "center",
-          paddingVertical: 25,
+          paddingVertical: 15,
         }}
       >
     
@@ -237,7 +237,7 @@ const BetDare = ({ navigation }) => {
 
     whiteButton: {
       height: 50,
-      width: 150,
+      width: 160,
       backgroundColor: COLORS.white,
       borderRadius: 5,
       alignItems: "center",
@@ -248,7 +248,7 @@ const BetDare = ({ navigation }) => {
     },
     greenButton: {
       height: 50,
-      width: 150,
+      width: 160,
       backgroundColor: COLORS.primary,
       borderRadius: 5,
       alignItems: "center",
@@ -265,7 +265,6 @@ const BetDare = ({ navigation }) => {
       justifyContent: "center",
       borderColor: COLORS.white,
       borderWidth: 2,
-      marginBottom: SIZES.margin,
     },
     whiteButtonText: {
       color: COLORS.primary,
@@ -280,6 +279,7 @@ const BetDare = ({ navigation }) => {
   });
 
   return (
+
     <ScrollView
       contentContainerStyle={{
         flexGrow: 1,
@@ -302,6 +302,7 @@ const BetDare = ({ navigation }) => {
       </View>
       {renderFooter()}
     </ScrollView>
+
   );
 };
 
