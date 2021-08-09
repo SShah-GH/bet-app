@@ -14,7 +14,7 @@ import {
   Platform,
 } from "react-native";
 
-import templateDash from "../assets/images/template-dashboard.png";
+import template from "../assets/images/template.png";
 import grayCross from "../assets/images/gray-cross.png";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
 import bellIcon from "../assets/images/bell-icon.png";
@@ -24,13 +24,13 @@ import trophyGray from "../assets/images/trophy-gray.png";
 import logoGray from "../assets/images/logo-gray.png";
 import trophyIcon from "../assets/images/trophy.png";
 
-const DashBoard = ({ navigation }) => {
+const LeaderBoard = ({ navigation }) => {
   function renderHeader() {
     return (
       <View>
         <Image
           /*change to X out button*/
-          source={templateDash}
+          source={template}
           resizeMode="contain"
           style={{
             marginTop: 50,
@@ -51,10 +51,10 @@ const DashBoard = ({ navigation }) => {
           alignItems: "center",
           paddingVertical: 15,
           shadowOffset: {
-            width: 10,
-            height: 10,
+            width: 0,
+            height: 6,
           },
-          shadowOpacity: 0.8,
+          shadowOpacity: 0.1,
           elevation: 3,
         }}
       >
@@ -78,8 +78,8 @@ const DashBoard = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            console.log("To LeaderBoard");
-            navigation.navigate("LeaderBoard");
+            console.log("To Dashboard");
+            navigation.navigate("DashBoard");
           }}
         >
           <Image
@@ -105,29 +105,25 @@ const DashBoard = ({ navigation }) => {
   });
 
   return (
-    <View>
-    <View
-      style ={{
-        alignItems:'center',
+    <ScrollView
+      contentContainerStyle={{
         flexGrow: 1,
+        justifyContent: "space-between",
         paddingHorizontal: 5,
-        backgroundColor: COLORS.white
+        backgroundColor: COLORS.white,
       }}
     >
       {renderHeader()}
-  
-    </View>
-    <View
+      <View
         style={{
           position: "absolute",
-          bottom: 70,
-          backgroundColor:COLORS.white
+          bottom: 0,
         }}
       >
         {renderFooter()}
       </View>
-    </View> 
+    </ScrollView>
   );
 };
 
-export default DashBoard;
+export default LeaderBoard;

@@ -13,7 +13,8 @@ import BetDare from "./BetDare";
 import BetCash from "./BetCash";
 import Settings from "./Settings";
 import BetContact from "./BetContact";
-
+import Notifications from "./Notifications";
+import LeaderBoard from "./LeaderBoard";
 
 export{
     Home,
@@ -30,5 +31,7 @@ export{
     BetDare,
     BetCash,
     Settings,
-    BetContact
+    BetContact,
+    Notifications,
+    LeaderBoard
 };
