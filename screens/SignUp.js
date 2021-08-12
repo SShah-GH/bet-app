@@ -20,6 +20,12 @@ import { firebase } from '../firebase'
 const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
+  const [fullName, setFullName] = React.useState('Name');
+  const [email, setEmail] = React.useState('Email');
+  const [phone, setPhone] = React.useState('Phone');
+  const [password, setPassword] = React.useState('Password');
+  const [confirmPassword, setConfirmPassword] = React.useState('Confirm Password');
+
   const onSubmitSignUp = () => {
     if (password !== confirmPassword) {
       alert("Passwords don't match.")
@@ -72,12 +78,6 @@ const SignUp = ({ navigation }) => {
   }
 
   function renderForm() {
-    const [fullName, setFullName] = React.useState('Name');
-    const [email, setEmail] = React.useState('Email');
-    const [phone, setPhone] = React.useState('Phone');
-    const [password, setPassword] = React.useState('Password');
-    const [confirmPassword, setConfirmPassword] = React.useState('Confirm Password');
-
     return (
       <View>
         {/* Full Name */}
