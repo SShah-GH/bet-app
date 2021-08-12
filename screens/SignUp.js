@@ -15,9 +15,38 @@ import {
 } from "react-native";
 
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
+import { firebase } from '../firebase'
 
 const SignUp = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
+
+  const onSubmitSignUp = () => {
+    if (password !== confirmPassword) {
+      alert("Passwords don't match.")
+      return
+    }
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then((response) => {
+            const uid = response.user.uid
+            const data = {
+                id: uid,
+                email,
+                fullName,
+            };
+            const usersRef = firebase.firestore().collection('users')
+            usersRef
+                .doc(uid)
+                .set(data)
+                .then(() => {
+                    navigation.navigate('Home', {user: data})
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+        })
+  }
 
   function renderHeader() {
     return (
@@ -43,6 +72,12 @@ const SignUp = ({ navigation }) => {
   }
 
   function renderForm() {
+    const [fullName, setFullName] = React.useState('Name');
+    const [email, setEmail] = React.useState('Email');
+    const [phone, setPhone] = React.useState('Phone');
+    const [password, setPassword] = React.useState('Password');
+    const [confirmPassword, setConfirmPassword] = React.useState('Confirm Password');
+
     return (
       <View>
         {/* Full Name */}
@@ -53,6 +88,8 @@ const SignUp = ({ navigation }) => {
             placeholder="John Doe"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.gray}
+            onChangeText={(text) => setFullName(text)}
+            value={fullName}
           />
         </View>
 
@@ -64,6 +101,8 @@ const SignUp = ({ navigation }) => {
             placeholder="johndoe@gmail.com"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.gray}
+            onChangeText={(text) => setEmail(text)}
+            value={email}
           />
         </View>
 
@@ -75,6 +114,8 @@ const SignUp = ({ navigation }) => {
             placeholder="+01 000 111 222"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.gray}
+            onChangeText={(text) => setPhone(text)}
+            value={phone}
           />
         </View>
 
@@ -86,6 +127,8 @@ const SignUp = ({ navigation }) => {
             placeholder="Enter Password"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
+            onChangeText={(text) => setPassword(text)}
+            value={password}
             secureTextEntry={!showPassword}
           />
           <TouchableOpacity
@@ -105,9 +148,11 @@ const SignUp = ({ navigation }) => {
           <Text style={styles.subHeading}>RETYPE PASSSWORD</Text>
           <TextInput
             style={styles.textInput}
-            placeholder="Enter Password"
+            placeholder="Confirm Password"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.white}
+            onChangeText={(text) => setConfirmPassword(text)}
+            value={confirmPassword}
             secureTextEntry={!showPassword}
           />
           <TouchableOpacity
@@ -138,6 +183,7 @@ const SignUp = ({ navigation }) => {
           }}
           onPress={() => {
             console.log("Signed Up");
+            onSubmitSignUp();
             navigation.navigate("Home");
           }}
         >
@@ -157,34 +203,33 @@ const SignUp = ({ navigation }) => {
 
   function renderButton2() {
     return (
-      <View style={{ marginTop: SIZES.padding, flexDirection: "row" }}>
-        <Text
-          style={{
-            color: COLORS.darkgray,
-            ...FONTSIZES.body4,
-            fontFamily: "monsterratBold",
-          }}
-        >
-          {" "}
-          ALREADY MADE AN ACCOUNT?{" "}
+      <View style={{ marginTop: SIZES.padding}}>
+        <Text style={(styles.subHeading)}>
+          HAVE AN ACCOUNT?
         </Text>
+
         <TouchableOpacity
           style={{
+            marginTop: SIZES.margin / 2,
+            height: 50,
+            backgroundColor: COLORS.secondary,
+            borderRadius: 5,
+            alignItems: "center",
             justifyContent: "center",
           }}
           onPress={() => {
-            console.log("Going to LogIn");
+            console.log("Going to Login");
             navigation.navigate("LogIn");
           }}
         >
           <Text
             style={{
-              color: COLORS.secondary,
-              ...FONTSIZES.body4,
+              color: COLORS.white,
+              ...FONTSIZES.body3,
               fontFamily: "monsterratBold",
             }}
           >
-            {" "}LOGIN→
+            LOGIN
           </Text>
         </TouchableOpacity>
       </View>

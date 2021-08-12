@@ -54,7 +54,7 @@ const App = () => {
     <NavigationContainer theme={theme}>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName={"Notifications"}
+        initialRouteName={"SignUp"}
       >
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Home" component={Home} />
