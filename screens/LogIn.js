@@ -14,9 +14,41 @@ import {
   Platform,
 } from "react-native";
 import { COLORS, SIZES, FONTSIZES } from "../constants/index";
+import { firebase } from '../firebase'
 
 const LogIn = ({ navigation }) => {
   const [showPassword, setShowPassword] = React.useState(false);
+
+  const [email, setEmail] = React.useState('Email');
+  const [password, setPassword] = React.useState('Password');
+
+  const onSubmitLogin = () => {
+    firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then((response) => {
+            const uid = response.user.uid
+            const usersRef = firebase.firestore().collection('users')
+            usersRef
+                .doc(uid)
+                .get()
+                .then(firestoreDocument => {
+                    if (!firestoreDocument.exists) {
+                        alert("User does not exist anymore.")
+                        return;
+                    }
+                    const user = firestoreDocument.data()
+                    navigation.navigate('Home', {user})
+                })
+                .catch(error => {
+                    alert(error)
+                });
+        })
+        .catch(error => {
+            alert(error)
+        })
+  }
+
   function renderHeader() {
     return (
       <View>
@@ -51,6 +83,8 @@ const LogIn = ({ navigation }) => {
             placeholder="johndoe@gmail.com"
             placeholderTextColor={COLORS.gray}
             selectionColor={COLORS.gray}
+            onChangeText={(text) => setEmail(text)}
+            value={email}
           />
         </View>
 
@@ -62,6 +96,8 @@ const LogIn = ({ navigation }) => {
             placeholder="Enter Password"
             placeholderTextColor={COLORS.white}
             selectionColor={COLORS.white}
+            onChangeText={(text) => setPassword(text)}
+            value={password}
             secureTextEntry={!showPassword}
           />
           <TouchableOpacity
