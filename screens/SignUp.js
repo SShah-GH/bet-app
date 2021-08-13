@@ -184,7 +184,7 @@ const SignUp = ({ navigation }) => {
           onPress={() => {
             console.log("Signed Up");
             onSubmitSignUp();
-            navigation.navigate("Home");
+            navigation.navigate("DashBoard");
           }}
         >
           <Text

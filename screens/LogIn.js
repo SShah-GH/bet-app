@@ -129,7 +129,8 @@ const LogIn = ({ navigation }) => {
           }}
           onPress={() => {
             console.log("Logged In");
-            navigation.navigate("Home");
+            onSubmitLogin();
+            navigation.navigate("DashBoard");
           }}
         >
           <Text
